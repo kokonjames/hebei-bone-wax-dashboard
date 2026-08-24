@@ -104,6 +104,16 @@ tr:last-child td{border-bottom:none}
 /* ── Footer ── */
 .note{font-size:11px;color:#aaa;margin-top:10px;padding-top:8px;border-top:1px solid #f0f0f0}
 
+/* ── Grade legend ── */
+.grade-legend{background:#fff;border-radius:10px;padding:14px 24px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.grade-legend-title{font-size:12px;font-weight:700;color:#1a3a5c;margin-right:6px;white-space:nowrap}
+.grade-item{display:flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;white-space:nowrap}
+.grade-4A{background:#4a1942;color:#fff}
+.grade-3A{background:#7b2d8b;color:#fff}
+.grade-2A{background:#c0392b;color:#fff}
+.grade-A{background:#e67e22;color:#fff}
+.grade-B{background:#7f8c8d;color:#fff}
+.grade-sep{width:1px;height:20px;background:#e0e4ea;margin:0 4px}
 /* ── Risk badges ── */
 .risk-high{background:#fde;color:#b92020;border:1px solid #f5b8b8;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:700}
 .risk-mid {background:#fef5e4;color:#c07a00;border:1px solid #f5d8a0;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:700}
@@ -164,6 +174,20 @@ tr:last-child td{border-bottom:none}
       <div class="kpi-val">46</div>
       <div class="kpi-sub">含 A级3家 &nbsp;/&nbsp; B级9家</div>
     </div>
+  </div>
+
+  <!-- ═══ 医院等级说明 ═══ -->
+  <div class="grade-legend">
+    <span class="grade-legend-title">医院等级标准（月度用量）：</span>
+    <span class="grade-item grade-4A">4A级 &gt;300克</span>
+    <div class="grade-sep"></div>
+    <span class="grade-item grade-3A">3A级 200–300克</span>
+    <div class="grade-sep"></div>
+    <span class="grade-item grade-2A">2A级 100–200克</span>
+    <div class="grade-sep"></div>
+    <span class="grade-item grade-A">A级 50–100克</span>
+    <div class="grade-sep"></div>
+    <span class="grade-item grade-B">B级 &lt;50克</span>
   </div>
 
   <!-- ═══ Chart Row 1 ═══ -->
