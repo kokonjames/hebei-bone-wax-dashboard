@@ -327,8 +327,8 @@ tr:last-child td{border-bottom:none}
   <div class="section">
     <div class="sec-ttl">颐合恒瑞已采购医院明细（共27家 · 56笔）</div>
     <div class="sum-line">
-      <span>在附件3中：<b>19家</b></span>
-      <span>仅平台采购（未报量）：<b>8家</b></span>
+      <span>在附件3中：<b>18家</b></span>
+      <span>仅平台采购（未报量）：<b>9家</b></span>
       <span>最高采购次数：<b>9次（怀来县医院）</b></span>
     </div>
     <div class="tbl-wrap">
@@ -377,7 +377,7 @@ tr:last-child td{border-bottom:none}
         <tbody id="tbUnpurchased"></tbody>
       </table>
     </div>
-    <div class="note">注：附件3共65家报量医院，颐合恒瑞已采购19家（29.2%），尚未采购46家（70.8%）。</div>
+    <div class="note">注：附件3共65家报量医院，颐合恒瑞已采购18家（27.7%），尚未采购47家（72.3%）。</div>
   </div>
 
   <!-- ═══ 竞品采购分析 ═══ -->
@@ -626,7 +626,7 @@ const YH = [
   {r:24,name:'滦州市人民医院',      spec:'1克',    cnt:1, last:'2026-07-29', in3:'是'},
   {r:25,name:'张北县医院',          spec:'1克',    cnt:1, last:'2026-08-05', in3:'否'},
   {r:26,name:'邯郸汇仁中医医院',    spec:'1克',    cnt:1, last:'2026-08-10', in3:'否'},
-  {r:27,name:'磁县人民医院',        spec:'1克',    cnt:1, last:'2026-08-04', in3:'是'},
+  {r:27,name:'磁县人民医院',        spec:'1克',    cnt:1, last:'2026-08-04', in3:'否'},
 ];
 
 const UNPURCHASED = [
@@ -711,15 +711,17 @@ function rkClass(r){
   if(r===1) return 'rk-1'; if(r===2) return 'rk-2'; if(r===3) return 'rk-3'; return 'rk-n';
 }
 
-// YH table
+// YH table — grouped: 在附件3 first, then 不在附件3
 const tbYH = document.getElementById('tbYH');
 const maxCnt = 9;
-YH.forEach(h=>{
+const yhIn3  = YH.filter(h=>h.in3==='是').sort((a,b)=>b.cnt-a.cnt);
+const yhOut3 = YH.filter(h=>h.in3==='否').sort((a,b)=>b.cnt-a.cnt);
+
+function renderYHRow(h){
   const w = Math.round(h.cnt/maxCnt*70);
   const in3 = h.in3==='是'
     ? '<span style="color:#1b5e1f;font-size:12px">✓ 是</span>'
     : '<span style="color:#bbb;font-size:12px">— 否</span>';
-  const specCls = h.spec.includes('2克')&&h.spec.includes('1克') ? 'bg-yh' : 'bg-yh';
   tbYH.innerHTML += `<tr>
     <td><span class="rk ${rkClass(h.r)}">${h.r}</span></td>
     <td>${h.name}</td>
@@ -729,7 +731,12 @@ YH.forEach(h=>{
     <td style="color:#555">${h.last}</td>
     <td>${in3}</td>
   </tr>`;
-});
+}
+
+tbYH.innerHTML += `<tr class="city-row"><td colspan="7">✅ 在附件3中（${yhIn3.length}家）</td></tr>`;
+yhIn3.forEach(renderYHRow);
+tbYH.innerHTML += `<tr class="city-row" style="background:#fafafa"><td colspan="7" style="color:#888">➕ 计划外采购（不在附件3，共${yhOut3.length}家）</td></tr>`;
+yhOut3.forEach(renderYHRow);
 
 // Unpurchased table with city filter
 const cities = ['全部',...[...new Set(UNPURCHASED.map(h=>h.city))]];
