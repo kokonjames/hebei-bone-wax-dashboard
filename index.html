@@ -171,7 +171,7 @@ tr:last-child td{border-bottom:none}
     </div>
     <div class="kpi c6">
       <div class="kpi-lbl">附件3未采购医院</div>
-      <div class="kpi-val">46</div>
+      <div class="kpi-val">47</div>
       <div class="kpi-sub">含 A级3家 &nbsp;/&nbsp; B级9家</div>
     </div>
   </div>
@@ -327,8 +327,8 @@ tr:last-child td{border-bottom:none}
   <div class="section">
     <div class="sec-ttl">颐合恒瑞已采购医院明细（共27家 · 56笔）</div>
     <div class="sum-line">
-      <span>在附件3中：<b>18家</b></span>
-      <span>仅平台采购（未报量）：<b>9家</b></span>
+      <span>在附件3中：<b>26家</b></span>
+      <span>仅平台采购（未报量）：<b>1家</b></span>
       <span>最高采购次数：<b>9次（怀来县医院）</b></span>
     </div>
     <div class="tbl-wrap">
@@ -352,7 +352,7 @@ tr:last-child td{border-bottom:none}
 
   <!-- ═══ 未采购医院清单 ═══ -->
   <div class="section">
-    <div class="sec-ttl">附件3已报量但未在平台采购颐合恒瑞的医院（共46家）</div>
+    <div class="sec-ttl">附件3已报量但未在平台采购颐合恒瑞的医院（共47家）</div>
 
     <div class="alert">
       <strong>⚠ 重点关注：有线下发货记录但无平台采购记录的医院</strong>
@@ -377,7 +377,7 @@ tr:last-child td{border-bottom:none}
         <tbody id="tbUnpurchased"></tbody>
       </table>
     </div>
-    <div class="note">注：附件3共65家报量医院，颐合恒瑞已采购18家（27.7%），尚未采购47家（72.3%）。</div>
+    <div class="note">注：附件3共73家医院（其中65家已勾量报量），颐合恒瑞已采购26家（35.6%），尚未采购47家（64.4%）。</div>
   </div>
 
   <!-- ═══ 竞品采购分析 ═══ -->
@@ -603,9 +603,9 @@ const YH = [
   {r:1, name:'怀来县医院',          spec:'2克',    cnt:9, last:'2026-08-19', in3:'是'},
   {r:2, name:'河间市人民医院',       spec:'1克·2克', cnt:8, last:'2026-08-20', in3:'是'},
   {r:3, name:'河北医科大学第二医院', spec:'1克·2克', cnt:8, last:'2026-08-21', in3:'是'},
-  {r:4, name:'武安仁慈医院',         spec:'1克',    cnt:3, last:'2026-08-10', in3:'否'},
-  {r:5, name:'廊坊首都医科大学附属北京潞河医院香河医康医院', spec:'2克', cnt:2, last:'2026-08-20', in3:'否'},
-  {r:6, name:'张家口市宣化区人民医院', spec:'2克',   cnt:2, last:'2026-08-11', in3:'否'},
+  {r:4, name:'武安仁慈医院',         spec:'1克',    cnt:3, last:'2026-08-10', in3:'是'},
+  {r:5, name:'廊坊首都医科大学附属北京潞河医院香河医康医院', spec:'2克', cnt:2, last:'2026-08-20', in3:'是'},
+  {r:6, name:'张家口市宣化区人民医院', spec:'2克',   cnt:2, last:'2026-08-11', in3:'是'},
   {r:7, name:'北京大学第三医院秦皇岛医院', spec:'1克·2克', cnt:2, last:'2026-08-10', in3:'是'},
   {r:8, name:'中国人民解放军联勤保障部队第九八〇医院', spec:'2克', cnt:2, last:'2026-08-06', in3:'是'},
   {r:9, name:'河北医科大学第四医院', spec:'1克',    cnt:2, last:'2026-07-30', in3:'是'},
@@ -618,14 +618,14 @@ const YH = [
   {r:16,name:'邢台市信都区人民医院', spec:'2克',   cnt:1, last:'2026-08-14', in3:'是'},
   {r:17,name:'河北省中医院',        spec:'2克',    cnt:1, last:'2026-08-07', in3:'是'},
   {r:18,name:'唐山虹桥骨科医院',    spec:'1克',    cnt:1, last:'2026-07-29', in3:'是'},
-  {r:19,name:'蔚县蔚州医院',        spec:'1克',    cnt:1, last:'2026-07-23', in3:'否'},
-  {r:20,name:'三河燕郊福合第一医院', spec:'1克',   cnt:1, last:'2026-08-17', in3:'否'},
+  {r:19,name:'蔚县蔚州医院',        spec:'1克',    cnt:1, last:'2026-07-23', in3:'是'},
+  {r:20,name:'三河燕郊福合第一医院', spec:'1克',   cnt:1, last:'2026-08-17', in3:'是'},
   {r:21,name:'高邑县医院',          spec:'1克',    cnt:1, last:'2026-07-20', in3:'是'},
-  {r:22,name:'滦南慈济中医医院',    spec:'1克',    cnt:1, last:'2026-08-14', in3:'否'},
+  {r:22,name:'滦南慈济中医医院',    spec:'1克',    cnt:1, last:'2026-08-14', in3:'是'},
   {r:23,name:'深州市中西医结合医院', spec:'1克',   cnt:1, last:'2026-07-31', in3:'是'},
   {r:24,name:'滦州市人民医院',      spec:'1克',    cnt:1, last:'2026-07-29', in3:'是'},
-  {r:25,name:'张北县医院',          spec:'1克',    cnt:1, last:'2026-08-05', in3:'否'},
-  {r:26,name:'邯郸汇仁中医医院',    spec:'1克',    cnt:1, last:'2026-08-10', in3:'否'},
+  {r:25,name:'张北县医院',          spec:'1克',    cnt:1, last:'2026-08-05', in3:'是'},
+  {r:26,name:'邯郸汇仁中医医院',    spec:'1克',    cnt:1, last:'2026-08-10', in3:'是'},
   {r:27,name:'磁县人民医院',        spec:'1克',    cnt:1, last:'2026-08-04', in3:'否'},
 ];
 
@@ -637,7 +637,7 @@ const UNPURCHASED = [
   {city:'石家庄',name:'石家庄医专附属医院',   grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'国药乐仁堂河北医疗器械贸易有限公司'},
   {city:'石家庄',name:'赵县医院',             grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'石家庄三顾医疗器械贸易有限公司'},
   {city:'石家庄',name:'石家庄市妇幼保健院',   grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'国药乐仁堂河北医疗器械贸易有限公司'},
-  {city:'唐山',  name:'唐山市第二医院',       grade:'A',hasQty:'是',status:'临采',           delivery:'—',dealer:'九思堂唐山贸易有限公司'},
+  {city:'唐山',  name:'唐山市第二医院',       grade:'A',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'九思堂唐山贸易有限公司'},
   {city:'唐山',  name:'唐山人民医院',         grade:'B',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'河北深格商贸有限公司'},
   {city:'唐山',  name:'开滦总医院',           grade:'B',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'国药乐仁堂河北医疗器械服务有限公司'},
   {city:'唐山',  name:'华北理工大学附属医院', grade:'B',hasQty:'否',status:'已提单等待上会', delivery:'—',dealer:'华润医疗科技河北有限公司'},
@@ -655,8 +655,9 @@ const UNPURCHASED = [
   {city:'邯郸',  name:'峰峰总院',             grade:'A',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'邯郸市志英医药有限公司'},
   {city:'邯郸',  name:'邯郸市第一医院',       grade:'B',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'河北京慈医疗器械销售有限公司'},
   {city:'邯郸',  name:'鸡泽县中医院',         grade:'C',hasQty:'是',status:'正常使用',       delivery:'12克',dealer:'河北德聚仁合医疗器械贸易有限公司'},
-  {city:'邯郸',  name:'磁县中医院',           grade:'C',hasQty:'是',status:'正常使用',       delivery:'—',dealer:'河北德聚仁合医疗器械贸易有限公司'},
-  {city:'邯郸',  name:'邯郸市中医院',         grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'河北京慈医疗器械销售有限公司'},
+  {city:'邯郸',  name:'磁县中医院',           grade:'C',hasQty:'是',status:'正常使用',       delivery:'60克',dealer:'河北德聚仁合医疗器械贸易有限公司'},
+  {city:'邯郸',  name:'磁县医院',             grade:'C',hasQty:'是',status:'正常使用',       delivery:'36克',dealer:'国药乐仁堂器械有限公司'},
+  {city:'邯郸',  name:'邯郸市中医院',         grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'120克',dealer:'河北京慈医疗器械销售有限公司'},
   {city:'邯郸',  name:'永年区第一医院',       grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'河北京慈医疗器械销售有限公司'},
   {city:'邯郸',  name:'肥乡中医骨科医院',     grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'河北京慈医疗器械销售有限公司'},
   {city:'邯郸',  name:'邯郸市人民医院',       grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'邯郸市叁合医疗科技有限公司'},
@@ -670,7 +671,7 @@ const UNPURCHASED = [
   {city:'张家口', name:'蔚县中医院二分院',    grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'河北庆繁医疗器械有限公司'},
   {city:'张家口', name:'崇礼区医院',          grade:'C',hasQty:'是',status:'正常使用',       delivery:'72克',dealer:'张家口恒宥医疗器械有限公司'},
   {city:'秦皇岛', name:'秦皇岛经济开发区医院', grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'国药集团秦皇岛医疗器械有限公司'},
-  {city:'承德',  name:'双滦区人民医院',       grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'北京鸿驰康泰商贸有限公司'},
+  {city:'承德',  name:'双滦区人民医院',       grade:'C',hasQty:'是',status:'正常使用',       delivery:'12克',dealer:'北京鸿驰康泰商贸有限公司'},
   {city:'廊坊',  name:'大城县医院',           grade:'C',hasQty:'是',status:'正常使用',       delivery:'12克',dealer:'大城县进德医疗器械销售有限公司'},
   {city:'廊坊',  name:'大城县中医院',         grade:'C',hasQty:'是',status:'正常使用',       delivery:'—',dealer:'大城县进德医疗器械销售有限公司'},
   {city:'廊坊',  name:'三河市中医院',         grade:'C',hasQty:'是',status:'办理手续等待送货',delivery:'—',dealer:'华润廊坊医药有限公司'},
@@ -681,7 +682,7 @@ const UNPURCHASED = [
 const PRIORITY = [
   {city:'石家庄',name:'河北省人民医院',       grade:'A',status:'办理手续等待送货',delivery:'—',    action:'跟进手续办理，加速入院'},
   {city:'石家庄',name:'石家庄市第三医院',     grade:'B',status:'办理手续等待送货',delivery:'—',    action:'跟进手续办理，加速入院'},
-  {city:'唐山',  name:'唐山市第二医院',       grade:'A',status:'临采',           delivery:'—',    action:'推进集采转正式采购'},
+  {city:'唐山',  name:'唐山市第二医院',       grade:'A',status:'办理手续等待送货',delivery:'—',    action:'跟进手续办理，加速入院'},
   {city:'唐山',  name:'唐山人民医院',         grade:'B',status:'办理手续等待送货',delivery:'—',    action:'跟进手续办理，加速入院'},
   {city:'唐山',  name:'开滦总医院',           grade:'B',status:'办理手续等待送货',delivery:'—',    action:'跟进手续办理，加速入院'},
   {city:'唐山',  name:'华北理工大学附属医院', grade:'B',status:'已提单等待上会', delivery:'—',    action:'跟进院内上会进展'},
