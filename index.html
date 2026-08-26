@@ -352,11 +352,11 @@ tr:last-child td{border-bottom:none}
 
   <!-- ═══ 未采购医院清单 ═══ -->
   <div class="section">
-    <div class="sec-ttl">附件3已报量但未在平台采购颐合恒瑞的医院（共47家）</div>
+    <div class="sec-ttl">已正式报量·尚无平台采购记录的医院（共<span id="unpurchasedCount">—</span>家）</div>
 
     <div class="alert">
       <strong>⚠ 重点关注：有线下发货记录但无平台采购记录的医院</strong>
-      沧县医院（120克）、保定市第二医院（360克）、崇礼区医院（72克）、矿务局总医院（60克）、大城县医院（12克）、保定市第二中心医院（12克）、唐山市中医院（24克）、鸡泽县中医院（12克）——建议优先推动经销商在采购平台下单。
+      保定市第二医院（360克）、沧县医院（120克）、崇礼区医院（72克）、矿务局总医院（60克）、邯郸市中医院（120克）、唐山市中医院（24克）、大城县医院（12克）、保定市第二中心医院（12克）、鸡泽县中医院（12克）——建议优先推动经销商在采购平台下单。
     </div>
 
     <div class="tabs" id="cityTabs"></div>
@@ -368,7 +368,6 @@ tr:last-child td{border-bottom:none}
             <th>地市</th>
             <th>医院名称</th>
             <th>级别</th>
-            <th>勾量</th>
             <th>当前状态</th>
             <th>累计发货</th>
             <th>经销商</th>
@@ -377,7 +376,7 @@ tr:last-child td{border-bottom:none}
         <tbody id="tbUnpurchased"></tbody>
       </table>
     </div>
-    <div class="note">注：附件3共73家医院（其中65家已勾量报量），颐合恒瑞已采购26家（35.6%），尚未采购47家（64.4%）。</div>
+    <div class="note">注：已正式报量医院共59家，其中16家已有平台采购记录，其余<span id="unpurchasedCount2">—</span>家尚无平台采购记录，是近期推动下单的主要目标。</div>
   </div>
 
   <!-- ═══ 竞品采购分析 ═══ -->
@@ -387,7 +386,7 @@ tr:last-child td{border-bottom:none}
     <!-- ⚠ 6家紧急告警 -->
     <div style="background:#fff1f0;border:2px solid #ff4d4f;border-radius:8px;padding:14px 18px;margin-bottom:18px">
       <div style="font-weight:700;color:#b92020;font-size:15px;margin-bottom:10px">
-        ⚠ 46家未采购颐合恒瑞的报量医院中，竞品已先行入院 — 需紧急跟进 6 家
+        ⚠ 43家已报量但尚无平台采购记录的医院中，竞品已先行入院 — 需紧急跟进 6 家
       </div>
       <div style="font-size:12px;color:#888;margin-bottom:10px">以下医院已报量但颐合恒瑞采购记录为0，同期佰傲或鹏冠已有采购记录，存在被竞品占据市场的风险</div>
       <div class="tbl-wrap" style="margin:0">
@@ -741,11 +740,16 @@ yhIn3.forEach(renderYHRow);
 tbYH.innerHTML += `<tr class="city-row" style="background:#fafafa"><td colspan="7" style="color:#888">⚠️ 未正式报量·计划外采购（${yhOut3.length}家）</td></tr>`;
 yhOut3.forEach(renderYHRow);
 
-// Unpurchased table with city filter
-const cities = ['全部',...[...new Set(UNPURCHASED.map(h=>h.city))]];
+// Unpurchased table — 只展示报量清单中的医院（hasQty:'是'），共 59-16=43 家
+const UNPURCHASED_QTY = UNPURCHASED.filter(h=>h.hasQty==='是');
+const upCount = UNPURCHASED_QTY.length;
+document.getElementById('unpurchasedCount').textContent  = upCount;
+document.getElementById('unpurchasedCount2').textContent = upCount;
+
+const cities = ['全部',...[...new Set(UNPURCHASED_QTY.map(h=>h.city))]];
 const tabsEl = document.getElementById('cityTabs');
 cities.forEach((city,i)=>{
-  const cnt = city==='全部' ? UNPURCHASED.length : UNPURCHASED.filter(h=>h.city===city).length;
+  const cnt = city==='全部' ? UNPURCHASED_QTY.length : UNPURCHASED_QTY.filter(h=>h.city===city).length;
   const tab = document.createElement('div');
   tab.className='tab'+(i===0?' active':'');
   tab.innerHTML = `${city} <span style="font-size:10px;opacity:.7">(${cnt})</span>`;
@@ -760,12 +764,12 @@ cities.forEach((city,i)=>{
 function renderUnpurchased(filterCity){
   const tbody = document.getElementById('tbUnpurchased');
   tbody.innerHTML='';
-  const list = filterCity==='全部' ? UNPURCHASED : UNPURCHASED.filter(h=>h.city===filterCity);
+  const list = filterCity==='全部' ? UNPURCHASED_QTY : UNPURCHASED_QTY.filter(h=>h.city===filterCity);
   let lastCity='', idx=0;
   list.forEach(h=>{
     if(filterCity==='全部' && h.city!==lastCity){
-      const n = UNPURCHASED.filter(x=>x.city===h.city).length;
-      tbody.innerHTML+=`<tr class="city-row"><td colspan="8">▶ ${h.city}（${n}家）</td></tr>`;
+      const n = UNPURCHASED_QTY.filter(x=>x.city===h.city).length;
+      tbody.innerHTML+=`<tr class="city-row"><td colspan="7">▶ ${h.city}（${n}家）</td></tr>`;
       lastCity=h.city; idx=0;
     }
     idx++;
@@ -777,7 +781,6 @@ function renderUnpurchased(filterCity){
       <td>${h.city}</td>
       <td><strong>${h.name}</strong></td>
       <td><span class="badge bg-${h.grade}">${h.grade}级</span></td>
-      <td style="color:${h.hasQty==='是'?'#2e7d32':'#999'}">${h.hasQty}</td>
       <td><span class="${stClass(h.status)}">${h.status}</span></td>
       <td>${dvCell}</td>
       <td style="font-size:11px;color:#888">${h.dealer}</td>
@@ -834,7 +837,7 @@ const COMPETITIVE = [
   {city:'廊坊',   name:'廊坊燕达医院',      grade:'C', status:'正常使用',
    yh:1, baoSpec:'', baoCnt:0, pgSpec:'2克', pgCnt:1, pgLast:'2026-08-14',
    risk:'low', note:'多品牌各1笔，目前持平，保持跟进'},
-  // ── 新增：46家未采购中竞品已入院 ──
+  // ── 已报量尚无平台采购记录中，竞品已入院 ──
   {city:'唐山',   name:'开滦总医院',         grade:'B', status:'办理手续等待送货',
    yh:0, baoSpec:'', baoCnt:0, pgSpec:'1克', pgCnt:1, pgLast:'2026-08-01',
    risk:'mid', note:'B级医院，鹏冠1克已入院1笔，颐合恒瑞尚未采购，需加速手续推进'},
