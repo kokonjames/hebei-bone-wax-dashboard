@@ -194,7 +194,7 @@ tr:last-child td{border-bottom:none}
   <div class="chart-row cr3">
     <div class="chart-box">
       <div class="chart-ttl">厂家市场份额（按采购医院数）</div>
-      <div class="chart-wrap" style="height:210px"><canvas id="cPie"></canvas></div>
+      <div class="chart-wrap" style="height:240px"><canvas id="cPie"></canvas></div>
     </div>
     <div class="chart-box">
       <div class="chart-ttl">厂家采购笔数对比</div>
@@ -1028,7 +1028,7 @@ new Chart(document.getElementById('cPie'),{
     responsive:true, maintainAspectRatio:false,
     cutout:'62%',
     plugins:{
-      legend:{position:'right', labels:{font:{size:12}, padding:12, usePointStyle:true}},
+      legend:{position:'bottom', labels:{font:{size:12}, padding:10, usePointStyle:true, boxWidth:10}},
       tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${ctx.raw}家 (${(ctx.raw/53*100).toFixed(1)}%)`}}
     }
   }
