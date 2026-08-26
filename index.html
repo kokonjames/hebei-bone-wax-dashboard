@@ -327,8 +327,8 @@ tr:last-child td{border-bottom:none}
   <div class="section">
     <div class="sec-ttl">颐合恒瑞已采购医院明细（共27家 · 56笔）</div>
     <div class="sum-line">
-      <span>在附件3中：<b>26家</b></span>
-      <span>仅平台采购（未报量）：<b>1家</b></span>
+      <span>已正式报量：<b>16家</b></span>
+      <span>未正式报量（计划外）：<b>11家</b></span>
       <span>最高采购次数：<b>9次（怀来县医院）</b></span>
     </div>
     <div class="tbl-wrap">
@@ -341,13 +341,13 @@ tr:last-child td{border-bottom:none}
             <th>采购次数</th>
             <th>采购频次</th>
             <th>最后采购</th>
-            <th>在附件3</th>
+            <th>已正式报量</th>
           </tr>
         </thead>
         <tbody id="tbYH"></tbody>
       </table>
     </div>
-    <div class="note">注：采购次数为该医院在平台对颐合恒瑞产品的全部下单记录之和；同一医院可能同时采购1克和2克。</div>
+    <div class="note">注：采购次数为该医院在平台对颐合恒瑞产品的全部下单记录之和；同一医院可能同时采购1克和2克。「已正式报量」以颐封报量清单（共59家）为准。</div>
   </div>
 
   <!-- ═══ 未采购医院清单 ═══ -->
@@ -600,33 +600,35 @@ const gridColor = '#eef1f6';
 // ════════════════════════════════
 
 const YH = [
-  {r:1, name:'怀来县医院',          spec:'2克',    cnt:9, last:'2026-08-19', in3:'是'},
-  {r:2, name:'河间市人民医院',       spec:'1克·2克', cnt:8, last:'2026-08-20', in3:'是'},
-  {r:3, name:'河北医科大学第二医院', spec:'1克·2克', cnt:8, last:'2026-08-21', in3:'是'},
-  {r:4, name:'武安仁慈医院',         spec:'1克',    cnt:3, last:'2026-08-10', in3:'是'},
-  {r:5, name:'廊坊首都医科大学附属北京潞河医院香河医康医院', spec:'2克', cnt:2, last:'2026-08-20', in3:'是'},
-  {r:6, name:'张家口市宣化区人民医院', spec:'2克',   cnt:2, last:'2026-08-11', in3:'是'},
-  {r:7, name:'北京大学第三医院秦皇岛医院', spec:'1克·2克', cnt:2, last:'2026-08-10', in3:'是'},
-  {r:8, name:'中国人民解放军联勤保障部队第九八〇医院', spec:'2克', cnt:2, last:'2026-08-06', in3:'是'},
-  {r:9, name:'河北医科大学第四医院', spec:'1克',    cnt:2, last:'2026-07-30', in3:'是'},
-  {r:10,name:'定兴县医院',          spec:'2克',    cnt:1, last:'2026-07-21', in3:'是'},
-  {r:11,name:'张家口市下花园区医院', spec:'2克',    cnt:1, last:'2026-08-19', in3:'是'},
-  {r:12,name:'河北燕达医院',        spec:'2克',    cnt:1, last:'2026-08-10', in3:'是'},
-  {r:13,name:'辛集市第一医院',      spec:'2克',    cnt:1, last:'2026-07-21', in3:'是'},
-  {r:14,name:'河北省胸科医院',      spec:'2克',    cnt:1, last:'2026-07-23', in3:'是'},
-  {r:15,name:'平山县人民医院',      spec:'2克',    cnt:1, last:'2026-07-31', in3:'是'},
-  {r:16,name:'邢台市信都区人民医院', spec:'2克',   cnt:1, last:'2026-08-14', in3:'是'},
-  {r:17,name:'河北省中医院',        spec:'2克',    cnt:1, last:'2026-08-07', in3:'是'},
-  {r:18,name:'唐山虹桥骨科医院',    spec:'1克',    cnt:1, last:'2026-07-29', in3:'是'},
-  {r:19,name:'蔚县蔚州医院',        spec:'1克',    cnt:1, last:'2026-07-23', in3:'是'},
-  {r:20,name:'三河燕郊福合第一医院', spec:'1克',   cnt:1, last:'2026-08-17', in3:'是'},
-  {r:21,name:'高邑县医院',          spec:'1克',    cnt:1, last:'2026-07-20', in3:'是'},
-  {r:22,name:'滦南慈济中医医院',    spec:'1克',    cnt:1, last:'2026-08-14', in3:'是'},
-  {r:23,name:'深州市中西医结合医院', spec:'1克',   cnt:1, last:'2026-07-31', in3:'是'},
-  {r:24,name:'滦州市人民医院',      spec:'1克',    cnt:1, last:'2026-07-29', in3:'是'},
-  {r:25,name:'张北县医院',          spec:'1克',    cnt:1, last:'2026-08-05', in3:'是'},
-  {r:26,name:'邯郸汇仁中医医院',    spec:'1克',    cnt:1, last:'2026-08-10', in3:'是'},
-  {r:27,name:'磁县人民医院',        spec:'1克',    cnt:1, last:'2026-08-04', in3:'否'},
+  // ── 已正式报量（16家） ──
+  {r:1, name:'河间市人民医院',       spec:'1克·2克', cnt:8, last:'2026-08-20', in3:'是'},
+  {r:2, name:'河北医科大学第二医院', spec:'1克·2克', cnt:8, last:'2026-08-21', in3:'是'},
+  {r:3, name:'中国人民解放军联勤保障部队第九八〇医院', spec:'2克', cnt:2, last:'2026-08-06', in3:'是'},
+  {r:4, name:'河北医科大学第四医院', spec:'1克',    cnt:2, last:'2026-07-30', in3:'是'},
+  {r:5, name:'定兴县医院',          spec:'2克',    cnt:1, last:'2026-07-21', in3:'是'},
+  {r:6, name:'张家口市下花园区医院', spec:'2克',    cnt:1, last:'2026-08-19', in3:'是'},
+  {r:7, name:'河北燕达医院',        spec:'2克',    cnt:1, last:'2026-08-10', in3:'是'},
+  {r:8, name:'辛集市第一医院',      spec:'2克',    cnt:1, last:'2026-07-21', in3:'是'},
+  {r:9, name:'河北省胸科医院',      spec:'2克',    cnt:1, last:'2026-07-23', in3:'是'},
+  {r:10,name:'平山县人民医院',      spec:'2克',    cnt:1, last:'2026-07-31', in3:'是'},
+  {r:11,name:'邢台市信都区人民医院', spec:'2克',   cnt:1, last:'2026-08-14', in3:'是'},
+  {r:12,name:'河北省中医院',        spec:'2克',    cnt:1, last:'2026-08-07', in3:'是'},
+  {r:13,name:'高邑县医院',          spec:'1克',    cnt:1, last:'2026-07-20', in3:'是'},
+  {r:14,name:'深州市中西医结合医院', spec:'1克',   cnt:1, last:'2026-07-31', in3:'是'},
+  {r:15,name:'滦州市人民医院',      spec:'1克',    cnt:1, last:'2026-07-29', in3:'是'},
+  {r:16,name:'磁县人民医院',        spec:'1克',    cnt:1, last:'2026-08-04', in3:'是'},
+  // ── 未正式报量（11家） ──
+  {r:17,name:'怀来县医院',          spec:'2克',    cnt:9, last:'2026-08-19', in3:'否'},
+  {r:18,name:'武安仁慈医院',         spec:'1克',    cnt:3, last:'2026-08-10', in3:'否'},
+  {r:19,name:'廊坊首都医科大学附属北京潞河医院香河医康医院', spec:'2克', cnt:2, last:'2026-08-20', in3:'否'},
+  {r:20,name:'张家口市宣化区人民医院', spec:'2克',   cnt:2, last:'2026-08-11', in3:'否'},
+  {r:21,name:'北京大学第三医院秦皇岛医院', spec:'1克·2克', cnt:2, last:'2026-08-10', in3:'否'},
+  {r:22,name:'唐山虹桥骨科医院',    spec:'1克',    cnt:1, last:'2026-07-29', in3:'否'},
+  {r:23,name:'蔚县蔚州医院',        spec:'1克',    cnt:1, last:'2026-07-23', in3:'否'},
+  {r:24,name:'三河燕郊福合第一医院', spec:'1克',   cnt:1, last:'2026-08-17', in3:'否'},
+  {r:25,name:'滦南慈济中医医院',    spec:'1克',    cnt:1, last:'2026-08-14', in3:'否'},
+  {r:26,name:'张北县医院',          spec:'1克',    cnt:1, last:'2026-08-05', in3:'否'},
+  {r:27,name:'邯郸汇仁中医医院',    spec:'1克',    cnt:1, last:'2026-08-10', in3:'否'},
 ];
 
 const UNPURCHASED = [
@@ -721,8 +723,8 @@ const yhOut3 = YH.filter(h=>h.in3==='否').sort((a,b)=>b.cnt-a.cnt);
 function renderYHRow(h){
   const w = Math.round(h.cnt/maxCnt*70);
   const in3 = h.in3==='是'
-    ? '<span style="color:#1b5e1f;font-size:12px">✓ 是</span>'
-    : '<span style="color:#bbb;font-size:12px">— 否</span>';
+    ? '<span style="color:#1b5e1f;font-size:12px">✓ 已报量</span>'
+    : '<span style="color:#e67e22;font-size:12px">⚠ 未报量</span>';
   tbYH.innerHTML += `<tr>
     <td><span class="rk ${rkClass(h.r)}">${h.r}</span></td>
     <td>${h.name}</td>
@@ -734,9 +736,9 @@ function renderYHRow(h){
   </tr>`;
 }
 
-tbYH.innerHTML += `<tr class="city-row"><td colspan="7">✅ 在附件3中（${yhIn3.length}家）</td></tr>`;
+tbYH.innerHTML += `<tr class="city-row"><td colspan="7">✅ 已正式报量（${yhIn3.length}家）</td></tr>`;
 yhIn3.forEach(renderYHRow);
-tbYH.innerHTML += `<tr class="city-row" style="background:#fafafa"><td colspan="7" style="color:#888">➕ 计划外采购（不在附件3，共${yhOut3.length}家）</td></tr>`;
+tbYH.innerHTML += `<tr class="city-row" style="background:#fafafa"><td colspan="7" style="color:#888">⚠️ 未正式报量·计划外采购（${yhOut3.length}家）</td></tr>`;
 yhOut3.forEach(renderYHRow);
 
 // Unpurchased table with city filter
