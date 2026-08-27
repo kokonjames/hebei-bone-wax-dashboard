@@ -59,7 +59,7 @@ td.nm{font-weight:500;max-width:240px;overflow:hidden;text-overflow:ellipsis}
 <div class="grid">
 <div class="panel"><h2>签约分布情况</h2><div class="chartbox" id="cSign"></div></div>
 <div class="panel"><h2>完成进度分布（已签订）</h2><div class="chartbox" id="cProg"></div></div>
-<div class="panel"><h2>各地区发货金额（元）</h2><div class="chartbox" id="cRegion"></div></div>
+<div class="panel"><h2>各地区发货金额（元）· Top 12</h2><div class="chartbox" id="cRegion" style="height:320px"></div></div>
 <div class="panel"><h2>发货金额 Top 10 医院</h2><div class="chartbox" id="cTop"></div></div>
 </div>
 
@@ -125,7 +125,10 @@ function renderCharts(rows){
   svgVBar(document.getElementById('cProg'),Object.keys(b),Object.values(b),'#0f4c81');
   const rm={}; rows.forEach(d=>{rm[d.region]=(rm[d.region]||0)+d.amt;});
   const rk=Object.entries(rm).sort((a,b)=>b[1]-a[1]);
-  svgVBar(document.getElementById('cRegion'),rk.map(x=>x[0]),rk.map(x=>Math.round(x[1])),'#2563eb');
+  const TOPN=12; let rLabels,rVals;
+  if(rk.length>TOPN){const top=rk.slice(0,TOPN),other=rk.slice(TOPN).reduce((s,x)=>s+x[1],0);rLabels=[...top.map(x=>x[0]),`其他(${rk.length-TOPN})`];rVals=[...top.map(x=>Math.round(x[1])),Math.round(other)];}
+  else {rLabels=rk.map(x=>x[0]);rVals=rk.map(x=>Math.round(x[1]));}
+  svgHBar(document.getElementById('cRegion'),rLabels,rVals,'#2563eb');
   const top=rows.filter(d=>d.amt>0).sort((a,b)=>b.amt-a.amt).slice(0,10);
   svgHBar(document.getElementById('cTop'),top.map(d=>d.name),top.map(d=>Math.round(d.amt)),'#0e7490');
 }
