@@ -128,6 +128,70 @@ tr:last-child td{border-bottom:none}
 ::-webkit-scrollbar{height:5px;width:5px}
 ::-webkit-scrollbar-track{background:#f0f2f5}
 ::-webkit-scrollbar-thumb{background:#c0cad8;border-radius:3px}
+
+/* ── Weekly update summary ── */
+.weekly-update{background:linear-gradient(135deg,#fff8ef 0%,#fff3e0 100%);border:1px solid #ffe0b2;border-left:5px solid #f5a623;border-radius:12px;padding:16px 22px;margin-bottom:22px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.wu-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.wu-ttl{font-size:15px;font-weight:800;color:#b44a00}
+.wu-date{font-size:12px;color:#a9794a;margin-left:auto;background:#fff;border:1px solid #ffd9a0;border-radius:20px;padding:2px 12px}
+.wu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.wu-item{background:#fff;border-radius:9px;padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:4px}
+.wu-num{font-size:24px;font-weight:800;line-height:1}
+.wu-num.up{color:#d92626}
+.wu-num.down{color:#1a9e4b}
+.wu-num.flat{color:#999}
+.wu-lbl{font-size:11px;color:#947a5a}
+.wu-extra{grid-column:1 / -1;font-size:12px;color:#7a5a2a;background:#fffaf0;border-radius:8px;padding:8px 12px;line-height:1.6}
+.wu-extra b{color:#b44a00}
+
+/* ── KPI week delta ── */
+.kpi-delta{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;margin-top:9px;padding:2px 9px;border-radius:12px}
+.kpi-delta.up{background:#fdeaea;color:#d92626}
+.kpi-delta.down{background:#e8f7ee;color:#1a9e4b}
+.kpi-delta.flat{background:#f2f2f2;color:#999}
+.kpi-delta .arw{font-size:10px;margin-right:1px}
+
+/* ── New-this-week row highlight ── */
+tr.new-week td{background:#fffaf0!important}
+tr.new-week td:first-child{border-left:4px solid #f5a623!important}
+tr.new-week:hover td{background:#fff3df!important}
+.new-badge{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:700;background:#f5a623;color:#fff;vertical-align:middle}
+
+/* ── Chart weekly caption ── */
+.chart-wk{font-size:12px;color:#b44a00;margin-top:8px;text-align:center;font-weight:600}
+
+/* ── 颐合恒瑞后台订单明细模块（颐合恒瑞 ERP · 85张截图 → 78单） ── */
+.yf-section{margin-top:36px;padding:22px 24px;background:linear-gradient(135deg,#fff 0%,#fdf6ed 100%);border:1px solid #ffd9a8;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.yf-header{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed #f5a623}
+.yf-title{font-size:20px;font-weight:800;color:#b35a00;letter-spacing:1px}
+.yf-meta{font-size:12px;color:#8a6d4f}
+.yf-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.yf-kpi{background:#fff;border:1px solid #ffe0b2;border-radius:10px;padding:14px 16px;text-align:center;box-shadow:0 1px 4px rgba(245,166,35,.08)}
+.yf-kpi-num{font-size:24px;font-weight:800;color:#d97a00;font-family:'SF Mono','Menlo',monospace;line-height:1.2}
+.yf-kpi-lbl{font-size:12px;color:#8a6d4f;margin-top:4px}
+.yf-spec-row{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.yf-spec-label{font-size:13px;font-weight:700;color:#7a5a3a;white-space:nowrap}
+.yf-spec-bar{display:flex;flex:1;height:30px;border-radius:8px;overflow:hidden;box-shadow:inset 0 1px 3px rgba(0,0,0,.1)}
+.yf-spec-seg{display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;transition:all .2s;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+.yf-spec-seg.seg-1g{background:linear-gradient(90deg,#f5a623,#f7b94a)}
+.yf-spec-seg.seg-2g{background:linear-gradient(90deg,#e87b00,#f59633)}
+.yf-tbl-wrap{overflow-x:auto;max-height:560px;overflow-y:auto;border:1px solid #f0e0c8;border-radius:10px}
+.yf-tbl{width:100%;border-collapse:collapse;font-size:13px}
+.yf-tbl th{background:#fff3e0;color:#7a5a3a;padding:10px 12px;text-align:left;font-weight:700;border-bottom:2px solid #f5a623;position:sticky;top:0;z-index:1;white-space:nowrap}
+.yf-tbl td{padding:9px 12px;border-bottom:1px solid #f5ead0;color:#3a2f1f;vertical-align:top}
+.yf-tbl tr:hover td{background:#fff8ef}
+.yf-tbl tr.yf-new td{background:#fffaf0}
+.yf-tbl tr.yf-new td:first-child{border-left:3px solid #f5a623}
+.yf-tbl .yf-new-badge{display:inline-block;margin-left:4px;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:700;background:#f5a623;color:#fff}
+.yf-tbl .yf-amount{font-family:'SF Mono','Menlo',monospace;font-weight:700;color:#d97a00;text-align:right;white-space:nowrap}
+.yf-tbl .yf-qty{text-align:right;font-weight:600}
+.yf-tbl .yf-spec{font-weight:700;white-space:nowrap}
+.yf-tbl .yf-spec-1g{color:#e87b00}
+.yf-tbl .yf-spec-2g{color:#b35a00}
+.yf-tbl .yf-ono{font-family:'SF Mono','Menlo',monospace;font-size:11px;color:#999;white-space:nowrap}
+.yf-note{margin-top:14px;padding:10px 14px;background:#fdf6ed;border-left:3px solid #f5a623;border-radius:6px;font-size:12px;color:#7a5a3a;line-height:1.7}
+.yf-note b{color:#b35a00}
+.yf-note code{background:#f5ead0;padding:1px 5px;border-radius:3px;font-size:11px;color:#5a4a2a}
 </style>
 </head>
 <body>
@@ -135,12 +199,27 @@ tr:last-child td{border-bottom:none}
 <div class="hd">
   <div>
     <div class="hd-title">可吸收骨蜡（颐封）河北2026采购数据看板</div>
-    <div class="hd-sub">数据来源：河北省医疗器械集采平台 &nbsp;|&nbsp; 附件3报量医院跟进分析</div>
+    <div class="hd-sub">数据来源：河北省医疗器械集采平台 &nbsp;|&nbsp; 颐合恒瑞后台 ERP（订单明细） &nbsp;|&nbsp; 附件3报量医院跟进分析</div>
   </div>
   <div class="hd-date">数据截至 2026-08-21</div>
 </div>
 
 <div class="wrap">
+
+  <!-- ═══ 本周更新摘要 ═══ -->
+  <div class="weekly-update">
+    <div class="wu-head">
+      <span class="wu-ttl">本周更新摘要</span>
+      <span class="wu-date" id="wuDate">基线 · 等待首次周更</span>
+    </div>
+    <div class="wu-grid">
+      <div class="wu-item"><span class="wu-num flat">—</span><span class="wu-lbl">新增采购笔数</span></div>
+      <div class="wu-item"><span class="wu-num flat">—</span><span class="wu-lbl">新增颐合恒瑞医院</span></div>
+      <div class="wu-item"><span class="wu-num flat">—</span><span class="wu-lbl">新增平台医院</span></div>
+      <div class="wu-item"><span class="wu-num flat">—</span><span class="wu-lbl">颐合笔数环比</span></div>
+      <div class="wu-extra" id="wuExtra">本周新增医院与突破将在此列出（首次周更后自动写入）。</div>
+    </div>
+  </div>
 
   <!-- ═══ KPI ═══ -->
   <div class="kpi-row">
@@ -148,31 +227,37 @@ tr:last-child td{border-bottom:none}
       <div class="kpi-lbl">采购平台医院总数</div>
       <div class="kpi-val">53</div>
       <div class="kpi-sub">涉及9种 C 编码</div>
+      <div class="kpi-delta flat">本周 —</div>
     </div>
     <div class="kpi c2">
       <div class="kpi-lbl">采购平台总笔数</div>
       <div class="kpi-val">174</div>
       <div class="kpi-sub">7月25笔 &nbsp;/&nbsp; 8月149笔</div>
+      <div class="kpi-delta flat">本周 —</div>
     </div>
     <div class="kpi c3">
       <div class="kpi-lbl">颐合恒瑞 · 采购医院</div>
       <div class="kpi-val">27</div>
       <div class="kpi-sub">医院占有率 50.9%（三家之首）</div>
+      <div class="kpi-delta flat">本周 —</div>
     </div>
     <div class="kpi c4">
       <div class="kpi-lbl">颐合恒瑞 · 采购笔数</div>
       <div class="kpi-val">56</div>
       <div class="kpi-sub">占总笔数 32.2%</div>
+      <div class="kpi-delta flat">本周 —</div>
     </div>
     <div class="kpi c5">
       <div class="kpi-lbl">8月环比增长</div>
       <div class="kpi-val">+496%</div>
       <div class="kpi-sub">25笔 → 149笔</div>
+      <div class="kpi-delta flat">本周 —</div>
     </div>
     <div class="kpi c6">
       <div class="kpi-lbl">附件3未采购医院</div>
       <div class="kpi-val">47</div>
       <div class="kpi-sub">含 A级3家 &nbsp;/&nbsp; B级9家</div>
+      <div class="kpi-delta flat">本周 —</div>
     </div>
   </div>
 
@@ -203,6 +288,7 @@ tr:last-child td{border-bottom:none}
     <div class="chart-box">
       <div class="chart-ttl">月度采购笔数趋势（按厂家堆叠）</div>
       <div class="chart-wrap" style="height:210px"><canvas id="cTrend"></canvas></div>
+      <div class="chart-wk" id="cTrendWk">本周新增：—</div>
     </div>
   </div>
 
@@ -465,6 +551,57 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
+
+<!-- ═══ 颐合恒瑞后台订单明细 ═══ -->
+<div class="yf-section">
+  <div class="yf-header">
+    <span class="yf-title">颐合恒瑞后台订单明细</span>
+    <span class="yf-meta">数据来源：北京颐合恒瑞医疗科技有限公司 ERP 后台 · 85 张订单截图（去重 7 张后 78 单） · 时间区间 2026-07-17 ~ 2026-08-28 15:49:38</span>
+  </div>
+
+  <div class="yf-kpi-row">
+    <div class="yf-kpi"><div class="yf-kpi-num">78</div><div class="yf-kpi-lbl">订单数（唯一）</div></div>
+    <div class="yf-kpi"><div class="yf-kpi-num">31</div><div class="yf-kpi-lbl">合作医院</div></div>
+    <div class="yf-kpi"><div class="yf-kpi-num">¥491,700</div><div class="yf-kpi-lbl">总采购金额</div></div>
+    <div class="yf-kpi"><div class="yf-kpi-num">492</div><div class="yf-kpi-lbl">总采购数量（盒）</div></div>
+  </div>
+
+  <div class="yf-spec-row">
+    <div class="yf-spec-label">规格分布</div>
+    <div class="yf-spec-bar">
+      <div class="yf-spec-seg seg-1g" style="width:19.3%"><span>1g/盒 · 31 单 · ¥94,764</span></div>
+      <div class="yf-spec-seg seg-2g" style="width:80.7%"><span>2g/盒 · 47 单 · ¥396,936</span></div>
+    </div>
+  </div>
+
+  <div class="yf-tbl-wrap">
+    <table class="yf-tbl">
+      <thead>
+        <tr>
+          <th>发送时间</th>
+          <th>医院</th>
+          <th>规格</th>
+          <th>数量</th>
+          <th>采购金额</th>
+          <th>配送企业</th>
+          <th>联系人 / 电话</th>
+          <th>收货地址</th>
+          <th>订单号</th>
+        </tr>
+      </thead>
+      <tbody id="yfTbOrders"></tbody>
+    </table>
+  </div>
+
+  <div class="yf-note">
+    ① 含 <b>3 笔</b> 混合规格订单（同单同时含 1g 与 2g），本表仅录入第一行，实际金额比显示多约 ¥20k。<br>
+    ② <b>11 笔</b>「发票抬头」原显示为税号 <code>0408011009264017627</code>，已按收货地址识别为 <b>河间市人民医院</b>。<br>
+    ③ <b>1 笔</b>（磁县滏阳北大街）发票抬头为税号，已按地址推断为 <b>磁县人民医院</b>；<b>1 笔</b>（蔚县）为长字符串，已解析为 <b>蔚县蔚州医院</b>。<br>
+    ④ <b>7 张</b>重复订单截图（同 orderNo + sendTime）已合并保留首条；3 笔订单存在发货/收货异常（recvQty=0 或 shipQty=0）已原样保留。
+    ⑤ 2026-08-28 增量更新：新增后台截图 1 张（17:48:28），并入订单 <code>QZ1300002026082804235</code>（河北医科大学第四医院 · 1g/盒 · 6 盒 · ¥3,576），订单数 77→78、金额 ¥488,124→¥491,700。
+  </div>
+</div>
+
 </div><!-- /wrap -->
 
 <script>
@@ -576,10 +713,12 @@ function renderAllHosp(filterCity){
     const pgCell = h.pg>0
       ? `<span class="badge bg-pg">${h.pg}笔</span>`
       : '<span style="color:#ddd">—</span>';
-    tbody.innerHTML+=`<tr style="${rowBg}">
+    const nwCls = h.isNew ? 'new-week' : '';
+    const nwBadge = h.isNew ? '<span class="new-badge">本周新增</span>' : '';
+    tbody.innerHTML+=`<tr class="${nwCls}" style="${rowBg}">
       <td>${idx}</td>
       <td>${h.city}</td>
-      <td><strong>${h.name}</strong></td>
+      <td><strong>${h.name}</strong>${nwBadge}</td>
       <td>${yhCell}</td>
       <td>${baoCell}</td>
       <td>${pgCell}</td>
@@ -724,9 +863,11 @@ function renderYHRow(h){
   const in3 = h.in3==='是'
     ? '<span style="color:#1b5e1f;font-size:12px">✓ 已报量</span>'
     : '<span style="color:#e67e22;font-size:12px">⚠ 未报量</span>';
-  tbYH.innerHTML += `<tr>
+  const nwCls2 = h.isNew ? 'new-week' : '';
+  const nwBadge2 = h.isNew ? ' <span class="new-badge">新</span>' : '';
+  tbYH.innerHTML += `<tr class="${nwCls2}">
     <td><span class="rk ${rkClass(h.r)}">${h.r}</span></td>
-    <td>${h.name}</td>
+    <td>${h.name}${nwBadge2}</td>
     <td><span class="badge bg-yh">${h.spec}</span></td>
     <td><div class="bar-mini"><strong>${h.cnt}</strong><div class="bar-fill" style="width:${w}px"></div></div></td>
     <td style="color:#4e79a7;letter-spacing:2px">${'●'.repeat(Math.min(h.cnt,5))}${'○'.repeat(Math.max(0,5-h.cnt))}</td>
@@ -1143,6 +1284,32 @@ new Chart(document.getElementById('cFreq'),{
     }
   }
 });
+
+// ═══ 颐合恒瑞后台订单明细 ═══
+const YF_ORDERS = [{"t": "2026-07-17 08:09:06", "h": "高邑县医院", "s": "1g/盒", "q": 12, "a": 7152, "d": "石家庄三顺医疗器械贸易有限公司", "c": "张世伟", "p": "13603212299", "addr": "高邑县中兴大街170号", "o": "O21300002026071700119", "nw": false}, {"t": "2026-07-17 16:04:37", "h": "怀来县医院", "s": "2g/盒", "q": 2, "a": 2384, "d": "张家口新兴医疗器械销售有限公司", "c": "谷智星", "p": "15230396658", "addr": "府前东街与燕京路口北侧", "o": "O21300002026071705079", "nw": false}, {"t": "2026-08-01 08:17:42", "h": "辛集市第一医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "国药乐仁堂河北医疗器械贸易有限公司", "c": "韩华", "p": "13933113183", "addr": "辛集市束鹿大街西段2号", "o": "O21300002026080100050", "nw": false}, {"t": "2026-07-20 09:21:40", "h": "河间市人民医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "上海精合医疗器械有限公司", "c": "高策", "p": "13903275125", "addr": "河间市城垣东路河间市人民医院", "o": "O21300002026072001358", "nw": false}, {"t": "2026-07-20 09:57:12", "h": "定兴县医院", "s": "2g/盒", "q": 10, "a": 11920, "d": "华润保定医药有限公司", "c": "张猛", "p": "13933259826", "addr": "定兴县通兴东路5号定兴县医院器械科", "o": "O21300002026072001982", "nw": false}, {"t": "2026-07-20 16:53:08", "h": "河间市人民医院", "s": "1g/盒", "q": 1, "a": 596, "d": "上海精合医疗器械有限公司", "c": "高策", "p": "13903275125", "addr": "河间市城垣东路河间市人民医院", "o": "O21300002026072006241", "nw": false}, {"t": "2026-07-22 15:19:48", "h": "河北省胸科医院", "s": "2g/盒", "q": 12, "a": 14304, "d": "石家庄山天科技有限公司", "c": "王赟", "p": "15633032902", "addr": "石家庄市胜利北大街372号", "o": "O21300002026072203952", "nw": false}, {"t": "2026-07-23 08:58:48", "h": "蔚县蔚州医院", "s": "1g/盒", "q": 1, "a": 596, "d": "北京宁康润达医疗器械有限公司", "c": "吴连泉", "p": "17731321220", "addr": "河北省张家口市蔚县蔚州镇牌楼东街3号", "o": "O21300002026072300711", "nw": false}, {"t": "2026-07-23 10:44:06", "h": "联勤保障部队第九八〇医院", "s": "2g/盒", "q": 20, "a": 23840, "d": "河北鼎城创联医疗器械销售有限公司", "c": "曾倩", "p": "13831197146", "addr": "河北省石家庄市中山西路398号", "o": "O21300002026072302347", "nw": false}, {"t": "2026-07-26 08:25:21", "h": "武安仁慈医院", "s": "1g/盒", "q": 2, "a": 1192, "d": "河北德聚仁合医疗器械贸易有限公司", "c": "李向艳", "p": "18231068828", "addr": "武安市建设大街2528号", "o": "O21300002026072600049", "nw": false}, {"t": "2026-07-26 08:26:23", "h": "武安仁慈医院", "s": "1g/盒", "q": 3, "a": 1788, "d": "河北德聚仁合医疗器械贸易有限公司", "c": "李向艳", "p": "18231068828", "addr": "武安市建设大街2528号", "o": "O21300002026072600051", "nw": false}, {"t": "2026-07-27 10:10:43", "h": "河间市人民医院", "s": "1g/盒", "q": 1, "a": 596, "d": "上海精合医疗器械有限公司", "c": "高策", "p": "13903275125", "addr": "河间市城垣东路河间市人民医院", "o": "O21300002026072702188", "nw": false}, {"t": "2026-07-27 12:08:26", "h": "怀来县医院", "s": "2g/盒", "q": 2, "a": 2384, "d": "张家口新兴医疗器械销售有限公司", "c": "谷智星", "p": "15230396658", "addr": "府前东街与燕京路口北侧", "o": "O21300002026072703931", "nw": false}, {"t": "2026-07-27 17:14:34", "h": "怀来县医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "张家口新兴医疗器械销售有限公司", "c": "谷智星", "p": "15230396658", "addr": "府前东街与燕京路口北侧", "o": "O21300002026072706527", "nw": false}, {"t": "2026-07-28 09:35:41", "h": "唐山虹桥骨科医院", "s": "1g/盒", "q": 12, "a": 7152, "d": "杭州住瑞医疗科技有限公司", "c": "曾录喜", "p": "13832899483", "addr": "玉田县虹桥镇南会村", "o": "O21300002026072801286", "nw": false}, {"t": "2026-07-28 09:42:09", "h": "怀来县医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "张家口新兴医疗器械销售有限公司", "c": "谷智星", "p": "15230396658", "addr": "府前东街与燕京路口北侧", "o": "O21300002026072801427", "nw": false}, {"t": "2026-07-29 08:23:16", "h": "河间市人民医院", "s": "1g/盒", "q": 1, "a": 596, "d": "上海精合医疗器械有限公司", "c": "高策", "p": "13903275125", "addr": "河间市城垣东路河间市人民医院", "o": "O21300002026072900191", "nw": false}, {"t": "2026-07-29 09:58:04", "h": "滦州市人民医院", "s": "1g/盒", "q": 1, "a": 596, "d": "九思堂（唐山）贸易有限公司", "c": "杜勇", "p": "15081560061", "addr": "唐山市滦县建华大街人民医院", "o": "O21300002026072901604", "nw": false}, {"t": "2026-07-29 15:39:50", "h": "河北医科大学第四医院", "s": "1g/盒", "q": 1, "a": 596, "d": "国药乐仁堂器械有限公司", "c": "白靖", "p": "13832169849", "addr": "长安区健康路12号", "o": "O21300002026072904607", "nw": false}, {"t": "2026-07-29 15:39:57", "h": "河北医科大学第四医院", "s": "1g/盒", "q": 5, "a": 2980, "d": "国药乐仁堂器械有限公司", "c": "白靖", "p": "13832169849", "addr": "长安区健康路12号", "o": "O21300002026072904609", "nw": false}, {"t": "2026-07-30 10:35:00", "h": "平山县医院", "s": "2g/盒", "q": 24, "a": 28608, "d": "国药乐仁堂河北医疗器械贸易有限公司", "c": "张女士", "p": "15373882790", "addr": "平山县平山镇中西路257号", "o": "O21300002026073002197", "nw": false}, {"t": "2026-07-30 11:33:45", "h": "涿州市中西医结合医院", "s": "1g/盒", "q": 12, "a": 7152, "d": "石家庄岩水商贸有限公司", "c": "韩璐", "p": "18731899461", "addr": "涿州市顺兴大街东侧、恒信路南侧", "o": "O21300002026073003073", "nw": false}, {"t": "2026-08-03 08:21:53", "h": "北京大学第三医院秦皇岛医院", "s": "2g/盒", "q": 4, "a": 4768, "d": "国药集团秦皇岛医疗器械有限公司", "c": "栗亮", "p": "13293177776", "addr": "海港区玉峰路15号", "o": "O21300002026080300271", "nw": false}, {"t": "2026-08-03 16:34:33", "h": "怀来县医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "张家口新兴医疗器械销售有限公司", "c": "谷智星", "p": "15230396658", "addr": "府前东街与燕京路口北侧", "o": "O21300002026080305130", "nw": false}, {"t": "2026-08-04 08:24:31", "h": "河间市人民医院", "s": "1g/盒", "q": 2, "a": 1192, "d": "上海精合医疗器械有限公司", "c": "高策", "p": "13903275125", "addr": "河间市城垣东路河间市人民医院", "o": "O21300002026080400309", "nw": false}, {"t": "2026-08-04 08:31:59", "h": "磁县人民医院（依地址推断）", "s": "1g/盒", "q": 36, "a": 21456, "d": "国药乐仁堂器械有限公司", "c": "赵晓燕", "p": "13333207062", "addr": "磁县滏阳北大街", "o": "O21300002026080400396", "nw": false}, {"t": "2026-08-04 14:18:46", "h": "怀来县医院", "s": "2g/盒", "q": 2, "a": 2384, "d": "张家口新兴医疗器械销售有限公司", "c": "谷智星", "p": "15230396658", "addr": "府前东街与燕京路口北侧", "o": "O21300002026080404158", "nw": false}, {"t": "2026-08-04 15:50:59", "h": "张家口市宣化区人民医院", "s": "2g/盒", "q": 2, "a": 2384, "d": "张家口新兴医疗器械销售有限公司", "c": "张彦伟", "p": "13784572606", "addr": "宣化区宣府大街123号-器械", "o": "O21300002026080405629", "nw": false}, {"t": "2026-08-04 21:04:07", "h": "河北省中医院", "s": "2g/盒", "q": 72, "a": 85824, "d": "华润河北益生医药有限公司", "c": "曹利鹏", "p": "18832118110", "addr": "石家庄市中山东路389号河北省中医院", "o": "O21300002026080407270", "nw": false}, {"t": "2026-08-05 10:02:16", "h": "河北燕达医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "国药器械廊坊有限公司", "c": "蔡立文", "p": "15350688355", "addr": "三河市燕郊开发区思菩兰西路西侧燕达医院住院部负一楼耗材库", "o": "O21300002026080501665", "nw": false}, {"t": "2026-08-05 10:34:34", "h": "张北县医院", "s": "1g/盒", "q": 12, "a": 7152, "d": "河北庆繁医疗器械有限公司", "c": "梁宁", "p": "18831330764", "addr": "张北县医院", "o": "O21300002026080502169", "nw": false}, {"t": "2026-08-06 10:53:04", "h": "联勤保障部队第九八〇医院", "s": "2g/盒", "q": 14, "a": 16688, "d": "河北鼎城创联医疗器械销售有限公司", "c": "曾倩", "p": "13831197146", "addr": "河北省石家庄市中山西路398号", "o": "O21300002026080602487", "nw": false}, {"t": "2026-08-06 17:18:11", "h": "邯郸仁仁中医医院", "s": "1g/盒", "q": 2, "a": 1192, "d": "河北德聚仁合医疗器械贸易有限公司", "c": "王彦琼", "p": "16603108111", "addr": "丛台区中华北大街578号中华大街与丰收路交叉口", "o": "O21300002026080606178", "nw": false}, {"t": "2026-08-08 11:58:08", "h": "武安仁慈医院", "s": "1g/盒", "q": 12, "a": 7152, "d": "河北德聚仁合医疗器械贸易有限公司", "c": "李向艳", "p": "18231068828", "addr": "武安市建设大街2528号", "o": "O21300002026080801051", "nw": false}, {"t": "2026-08-21 08:43:34", "h": "辛集市第一医院", "s": "2g/盒", "q": 6, "a": 7152, "d": "国药乐仁堂河北医疗器械贸易有限公司", "c": "韩华", "p": "13933113183", "addr": "辛集市束鹿大街西段2号", "o": "O21300002026082100369", "nw": false}, {"t": "2026-08-10 08:16:41", "h": "河间市人民医院", "s": "1g/盒", "q": 1, "a": 596, "d": "上海精合医疗器械有限公司", "c": "高策", "p": "13903275125", "addr": "河间市城垣东路河间市人民医院", "o": "O21300002026081000139", "nw": false}, {"t": "2026-08-10 08:21:57", "h": "北京大学第三医院秦皇岛医院", "s": "1g/盒", "q": 1, "a": 596, "d": "国药集团秦皇岛医疗器械有限公司", "c": "栗亮", "p": "13293177776", "addr": "海港区玉峰路15号", "o": "O21300002026081000198", "nw": false}, {"t": "2026-08-10 16:18:14", "h": "张家口市宣化区人民医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "张家口新兴医疗器械销售有限公司", "c": "张彦伟", "p": "13784572606", "addr": "宣化区宣府大街123号-器械", "o": "O21300002026081005632", "nw": false}, {"t": "2026-08-11 08:40:25", "h": "廊坊首都医科大学附属北京潞河医院香河医康医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "北京欧克医疗器械有限公司", "c": "于禄琳", "p": "18354506717", "addr": "香河县大香公路123号", "o": "O21300002026081100338", "nw": false}, {"t": "2026-08-12 16:56:23", "h": "邢台市信都区人民医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "上海福厚堂医疗科技有限公司", "c": "郝丰亮", "p": "15832972258", "addr": "邢台市襄都区开元北路669号", "o": "O21300002026081204844", "nw": false}, {"t": "2026-08-13 08:53:16", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026081300478", "nw": false}, {"t": "2026-08-13 15:54:57", "h": "滦南县滦济中医医院", "s": "1g/盒", "q": 1, "a": 596, "d": "唐山市锦文医疗器械有限公司", "c": "李春梅", "p": "15032565068", "addr": "滦南县倴城镇滦中医医院（元代风情街2号）", "o": "O21300002026081304459", "nw": false}, {"t": "2026-08-14 10:29:58", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 6, "a": 7152, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026081401942", "nw": false}, {"t": "2026-08-14 11:33:40", "h": "三河燕郊福合第一医院", "s": "1g/盒", "q": 12, "a": 7152, "d": "国药器械廊坊有限公司", "c": "刘春梅", "p": "13383169585", "addr": "三河市燕郊经济开发区京榆大街299号", "o": "O21300002026081402828", "nw": false}, {"t": "2026-08-14 15:51:39", "h": "怀来县医院", "s": "2g/盒", "q": 2, "a": 2384, "d": "张家口新兴医疗器械销售有限公司", "c": "谷智星", "p": "15230396658", "addr": "府前东街与燕京路口北侧", "o": "O21300002026081404553", "nw": false}, {"t": "2026-08-17 10:12:43", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 7, "a": 8344, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026081701959", "nw": false}, {"t": "2026-08-17 11:24:47", "h": "张家口市下花园区医院", "s": "2g/盒", "q": 2, "a": 2384, "d": "河北庆繁医疗器械有限公司", "c": "郝利民", "p": "15028348713", "addr": "下花园区医院西苑路10号", "o": "O21300002026081703575", "nw": false}, {"t": "2026-08-17 12:14:46", "h": "怀来县医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "张家口新兴医疗器械销售有限公司", "c": "谷智星", "p": "15230396658", "addr": "府前东街与燕京路口北侧", "o": "O21300002026081704048", "nw": false}, {"t": "2026-08-17 16:54:53", "h": "邢台市信都区人民医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "上海福厚堂医疗科技有限公司", "c": "郝丰亮", "p": "15832972258", "addr": "邢台市襄都区开元北路669号", "o": "O21300002026081706496", "nw": false}, {"t": "2026-08-18 10:40:05", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 3, "a": 3576, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026081802364", "nw": false}, {"t": "2026-08-18 16:53:04", "h": "河间市人民医院", "s": "1g/盒", "q": 1, "a": 596, "d": "上海精合医疗器械有限公司", "c": "高策", "p": "13903275125", "addr": "河间市城垣东路河间市人民医院", "o": "O21300002026081805351", "nw": false}, {"t": "2026-08-19 10:32:14", "h": "怀来县医院", "s": "2g/盒", "q": 2, "a": 2384, "d": "张家口新兴医疗器械销售有限公司", "c": "谷智星", "p": "15230396658", "addr": "府前东街与燕京路口北侧", "o": "O21300002026081901795", "nw": false}, {"t": "2026-08-19 11:06:37", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 6, "a": 7152, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026081902552", "nw": false}, {"t": "2026-08-19 14:44:53", "h": "廊坊首都医科大学附属北京潞河医院香河医康医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "北京康诚医疗器械有限公司", "c": "于翔琳", "p": "18354506717", "addr": "香河县大香公路123号", "o": "O21300002026081903589", "nw": false}, {"t": "2026-08-19 15:06:48", "h": "张家口市下花园区医院", "s": "2g/盒", "q": 2, "a": 2384, "d": "河北庆繁医疗器械有限公司", "c": "郝利民", "p": "15028348713", "addr": "下花园区医院西苑路10号", "o": "O21300002026081903745", "nw": false}, {"t": "2026-08-20 08:34:28", "h": "河间市人民医院", "s": "1g/盒", "q": 1, "a": 596, "d": "上海精合医疗器械有限公司", "c": "高策", "p": "13903275125", "addr": "河间市城垣东路河间市人民医院", "o": "O21300002026082000275", "nw": false}, {"t": "2026-08-20 09:49:13", "h": "河北医科大学第二医院", "s": "1g/盒", "q": 1, "a": 596, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026082001222", "nw": false}, {"t": "2026-08-21 14:53:14", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 8, "a": 9536, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026082103583", "nw": false}, {"t": "2026-08-21 16:39:39", "h": "保定市第二中心医院", "s": "1g/盒", "q": 1, "a": 596, "d": "河北通用医药有限公司", "c": "时斌", "p": "15632228892", "addr": "涿州市范阳中路67号", "o": "O21300002026082105027", "nw": false}, {"t": "2026-08-21 17:13:34", "h": "邢台市信都区人民医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "上海福厚堂医疗科技有限公司", "c": "郝丰亮", "p": "15832972258", "addr": "邢台市襄都区开元北路669号", "o": "O21300002026082105387", "nw": false}, {"t": "2026-08-23 09:38:23", "h": "邯郸仁仁中医医院", "s": "1g/盒", "q": 1, "a": 596, "d": "河北德聚仁合医疗器械贸易有限公司", "c": "王彦琼", "p": "16603108111", "addr": "丛台区中华北大街578号中华大街与丰收路交叉口", "o": "O21300002026082300150", "nw": false}, {"t": "2026-08-24 09:19:32", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 12, "a": 14304, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026082401035", "nw": true}, {"t": "2026-08-24 14:23:10", "h": "保定市第二医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "华润保定医药有限公司", "c": "吕波", "p": "3085215", "addr": "地址：河北省保定市东风西路338号", "o": "O21300002026082403610", "nw": true}, {"t": "2026-08-24 17:24:31", "h": "怀来县医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "张家口新兴医疗器械销售有限公司", "c": "谷智星", "p": "15230396658", "addr": "府前东街与燕京路口北侧", "o": "O21300002026082406105", "nw": true}, {"t": "2026-08-25 08:57:22", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 6, "a": 7152, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026082500587", "nw": true}, {"t": "2026-08-25 10:43:23", "h": "河北燕达医院", "s": "2g/盒", "q": 2, "a": 2384, "d": "国药器械廊坊有限公司", "c": "蔡立文", "p": "15350688355", "addr": "三河市燕郊开发区思菩兰西路西侧燕达医院住院部负一楼耗材库", "o": "O21300002026082502095", "nw": true}, {"t": "2026-08-25 10:53:45", "h": "高邑县医院", "s": "1g/盒", "q": 12, "a": 7152, "d": "石家庄三顺医疗器械贸易有限公司", "c": "张世伟", "p": "13603212299", "addr": "高邑县中兴大街170号", "o": "O21300002026082502274", "nw": true}, {"t": "2026-08-26 09:10:29", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 9, "a": 10728, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026082600652", "nw": true}, {"t": "2026-08-27 09:07:56", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 12, "a": 14304, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026082700647", "nw": true}, {"t": "2026-08-27 10:32:17", "h": "河北燕达医院", "s": "2g/盒", "q": 1, "a": 1192, "d": "国药器械廊坊有限公司", "c": "蔡立文", "p": "15350688355", "addr": "三河市燕郊开发区思菩兰西路西侧燕达医院住院部负一楼耗材库", "o": "O21300002026082701850", "nw": true}, {"t": "2026-08-27 10:42:33", "h": "联勤保障部队第九八〇医院", "s": "2g/盒", "q": 36, "a": 42912, "d": "河北鼎城创联医疗器械销售有限公司", "c": "曾倩", "p": "13831197146", "addr": "河北省石家庄市中山西路398号", "o": "O21300002026082702013", "nw": true}, {"t": "2026-08-27 15:22:28", "h": "河间市人民医院", "s": "1g/盒", "q": 1, "a": 596, "d": "上海精合医疗器械有限公司", "c": "高策", "p": "13903275125", "addr": "河间市城垣东路河间市人民医院", "o": "O21300002026082703674", "nw": true}, {"t": "2026-08-28 08:21:06", "h": "河北医科大学第二医院", "s": "2g/盒", "q": 7, "a": 8344, "d": "河北语泽医疗器械科技有限公司", "c": "刘艳东", "p": "66003129", "addr": "新华区和平西路215号", "o": "O21300002026082800182", "nw": true}, {"t": "2026-08-28 09:14:38", "h": "河间市人民医院", "s": "1g/盒", "q": 2, "a": 1192, "d": "上海精合医疗器械有限公司", "c": "高策", "p": "13903275125", "addr": "河间市城垣东路河间市人民医院", "o": "O21300002026082800806", "nw": true}, {"t": "2026-08-28 09:59:52", "h": "河北省人民医院", "s": "2g/盒", "q": 12, "a": 14304, "d": "国药乐仁堂器械有限公司", "c": "张锦丽", "p": "17732101612", "addr": "新华区和平西路348号", "o": "O21300002026082801462", "nw": true}, {"t": "2026-08-28 11:13:56", "h": "唐山市中医医院", "s": "1g/盒", "q": 2, "a": 1192, "d": "国药乐仁堂河北医疗器械服务有限公司", "c": "8738749", "p": "15027476555", "addr": "唐山市康庄道六号", "o": "O21300002026082802633", "nw": true}, {"t": "2026-08-28 14:03:07", "h": "河北省胸科医院", "s": "2g/盒", "q": 12, "a": 14304, "d": "石家庄山天科技有限公司", "c": "王赟", "p": "15633032902", "addr": "石家庄市胜利北大街372号", "o": "O21300002026082803123", "nw": true}, {"t": "2026-08-28 15:49:38", "h": "河北医科大学第四医院", "s": "1g/盒", "q": 6, "a": 3576, "d": "国药乐仁堂器械有限公司", "c": "巩常红", "p": "13765102305", "addr": "高新区天山大街169号", "o": "QZ1300002026082804235", "nw": true}];
+
+(function(){
+  var tb = document.getElementById('yfTbOrders');
+  if (!tb || typeof YF_ORDERS === 'undefined') return;
+  var rows = YF_ORDERS.map(function(r){
+    var nwCls = r.nw ? 'yf-new' : '';
+    var nwBadge = r.nw ? ' <span class="yf-new-badge">新</span>' : '';
+    var specCls = r.s === '1g/盒' ? 'yf-spec-1g' : 'yf-spec-2g';
+    return '<tr class="'+nwCls+'">'
+      + '<td>'+r.t+nwBadge+'</td>'
+      + '<td>'+r.h+'</td>'
+      + '<td class="yf-spec '+specCls+'">'+r.s+'</td>'
+      + '<td class="yf-qty">'+r.q+'</td>'
+      + '<td class="yf-amount">¥'+r.a.toLocaleString()+'</td>'
+      + '<td>'+r.d+'</td>'
+      + '<td>'+r.c+' / '+r.p+'</td>'
+      + '<td>'+r.addr+'</td>'
+      + '<td class="yf-ono">'+r.o+'</td>'
+      + '</tr>';
+  }).join('');
+  tb.innerHTML = rows;
+})();
+
 </script>
 </body>
 </html>
